@@ -84,7 +84,7 @@
             <section class="related section bordered">
                     <% if (post.prevPost && !post.hideInList) { %>
                     <article class="prev grid-50 tablet-grid-50 grid-parent">
-                            <div class="thumb cover" <% if (themeConfig.showFeatureImage && post.feature) { %> style="background: url(<%= post.prevPost.feature %>);" <% } %>></div>
+                            <div class="thumb cover" <% if (themeConfig.showFeatureImage && post.prevPost.feature) { %> style="background: url(<%= post.prevPost.feature %>);" <% } %>></div>
 
                         <a href="<%= post.prevPost.link %>" class="full-link"></a>                      
                         <div class="info">
@@ -96,7 +96,7 @@
                     <% if (post.nextPost && !post.hideInList) { %>
                     <article class="next grid-50 tablet-grid-50 grid-parent">
 
-                            <div class="thumb cover" <% if (themeConfig.showFeatureImage && post.feature) { %> style="background: url(<%= post.nextPost.feature %>);" <% } %>></div>
+                            <div class="thumb cover" <% if (themeConfig.showFeatureImage && psot.nextPost.feature) { %> style="background: url(<%= post.nextPost.feature %>);" <% } %>></div>
 
                         <a href="<%= post.nextPost.link %>" class="full-link"></a>                        
                         <div class="info">
