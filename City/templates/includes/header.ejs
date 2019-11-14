@@ -1,0 +1,62 @@
+    <nav class="mobile main-nav hide-on-desktop" role="navigation">
+        
+        <ul id="menu-header" class="menu">
+            <% menus.forEach(function (menu) { %>
+		<li class="nav-features"><a href="<%= menu.link %>"><%= menu.name %></a></li>
+		<% }); %>
+</ul>
+
+        <div class="social">
+                    <% ['rss', 'twitter', 'github', 'facebook','linkedin','telegram','instagram','qq','weibo','youtube'].forEach((item) => { %>
+                      <% if (site.customConfig[item]) { %>	
+                <a href="<%= site.customConfig[item] %>" class="twitter"><i class="fa fa-<%= item %>"></i></a>
+                  <% } %>
+                           <% }) %>
+        </div>
+        
+    </nav>
+
+    <!-- end: .mobile.main-nav -->
+    
+    <div class="menu-overlay hide-on-desktop"></div>
+
+	<!-- start: #wrapper -->
+	<div id="wrapper">
+
+		<!-- start: #header -->
+<header id="header" class="grid-20">
+
+	<div class="menu-mobile hide-on-desktop">
+		<i class="fa fa-bars"></i>
+	</div>
+
+	<!-- start: .menu-wrapper -->
+	<div class="menu-wrapper">
+		
+            <div class="logo"><a href="<%= themeConfig.domain %>"><img src="<%= themeConfig.domain %>/images/avatar.png?v=<%= site.utils.now %>" alt="<%= themeConfig.siteName %>"></a></div>
+        
+        <!-- start: .main-nav -->
+        <nav class="main-nav hide-on-tablet hide-on-mobile" role="navigation">
+            
+            <ul id="menu-header" class="menu">
+                <% menus.forEach(function (menu) { %>
+		<li class="nav-features"><a href="<%= menu.link %>"><%= menu.name %></a></li>
+        <% }); %>
+</ul>
+
+            <div class="social">
+                    <% ['rss', 'twitter', 'github', 'facebook','linkedin','telegram','instagram','qq','weibo','youtube'].forEach((item) => { %>
+                      <% if (site.customConfig[item]) { %>	
+                <a href="<%= site.customConfig[item] %>" class="twitter"><i class="fa fa-<%= item %>"></i></a>
+                  <% } %>
+                           <% }) %>
+            </div>        
+        </nav>
+        <!-- end: .main-nav -->
+		
+	</div>
+	<!-- end: .menu-wrapper -->
+	
+	<div class="clear"></div>
+
+</header>

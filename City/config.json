@@ -1,0 +1,140 @@
+{
+  "name": "City",
+  "version": "1.0",
+  "author": "云中君",
+  "repository": "https://github.com/alterfang/gridea-theme-city",
+  "customConfig": [
+
+      {
+        "name": "rss",
+        "label": "RSS",
+        "group": "社交",
+        "value": "",
+        "type": "input",
+        "note": "链接地址"
+      },
+      {
+        "name": "twitter",
+        "label": "Twitter",
+        "group": "社交",
+        "value": "",
+        "type": "input",
+        "note": "链接地址"
+      },
+      {
+        "name": "github",
+        "label": "Github",
+        "group": "社交",
+        "value": "",
+        "type": "input",
+        "note": "链接地址"
+      },
+      {
+        "name": "facebook",
+        "label": "Facebook",
+        "group": "社交",
+        "value": "",
+        "type": "input",
+        "note": "链接地址"
+      },
+      {
+        "name": "linkedin",
+        "label": "Linked in",
+        "group": "社交",
+        "value": "",
+        "type": "input",
+        "note": "链接地址"
+      },
+      {
+        "name": "telegram",
+        "label": "telegram",
+        "group": "社交",
+        "value": "",
+        "type": "input",
+        "note": "链接地址"
+      },
+
+      {
+        "name": "instagram",
+        "label": "Instagram",
+        "group": "社交",
+        "value": "",
+        "type": "input",
+        "note": "链接地址"
+      },
+      {
+        "name": "qq",
+        "label": "QQ",
+        "group": "社交",
+        "value": "",
+        "type": "input",
+        "note": "链接地址"
+      },
+      {
+        "name": "weibo",
+        "label": "微博",
+        "group": "社交",
+        "value": "",
+        "type": "input",
+        "note": "链接地址"
+      },
+      {
+        "name": "youtube",
+        "label": "Youtube",
+        "group": "社交",
+        "value": "",
+        "type": "input",
+        "note": "链接地址"
+      },
+      {
+        "name": "yemaimg",
+        "label": "文章图片默认图",
+        "group": "默认图片",
+        "value": "",
+        "type": "input",
+        "note": "请输入图片地址"
+      },
+      {
+        "name": "postimg",
+        "label": "内容页默认图片",
+        "group": "默认图片",
+        "value": "",
+        "type": "input",
+        "note": "请输入图片地址"
+      },
+      {
+        "name": "guidang",
+        "label": "归档页默认图片",
+        "group": "默认图片",
+        "value": "",
+        "type": "input",
+        "note": "请输入图片地址"
+      },
+      {
+        "name": "biaoqian",
+        "label": "标签默认图片",
+        "group": "默认图片",
+        "value": "",
+        "type": "input",
+        "note": "请输入图片地址"
+      },
+      {
+        "name": "mingzi",
+        "label": "作者昵称",
+        "group": "基本配置",
+        "value": "",
+        "type": "input",
+        "note": "请输入作者昵称"
+      },
+
+    {
+        "name": "ga",
+        "label": "跟踪 ID",
+        "group": "谷歌统计",
+        "value": "",
+        "type": "input",
+        "note": "UA-xxxxxxxxx-x"
+      }
+
+]
+}   

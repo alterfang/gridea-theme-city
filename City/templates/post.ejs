@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html >
+<%- include('./includes/head', { siteTitle: `${post.title} | ${themeConfig.siteName}` }) %>
+<body class="post-template tag-travel tag-nosidebar">
+
+    <!-- start: .mobile.main-nav -->
+    <%- include('./includes/header') %>
+<!-- end: #header -->
+
+        
+
+
+<!-- start: #single -->
+<main id="single" class="main nosidebar" role="main">
+
+    <!-- start: .content -->
+    <div class="content">
+    
+        <!-- start: .left-content -->
+        <div class="left-content grid-container np-mobile">         
+        
+            <article class="main-article post tag-travel tag-nosidebar">
+                
+                <header>
+                    
+                        <div class="featured-image cover" <% if (themeConfig.showFeatureImage && post.feature) { %> style="background: url(<%= post.feature %>);" <% } %>>
+                                <div class="tags">
+                                        <% post.tags.forEach(function(tag) { %>
+                                    <a href="<%= tag.link %>"><%= tag.name %></a>
+                                    <% }); %>
+                 
+                                </div>
+                        </div>
+
+                    <!-- start: .meta -->
+                    <div class="meta textcenter grid-container grid-small">
+                        <h1 class="title ularge"><%= post.title %></h1>
+                        <div class="date">
+                              
+                            <time datetime="<%= post.date %>"><%= post.dateFormat %></time>
+                          
+                            
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <!-- end: .meta -->
+                    
+                    <div class="clear"></div>
+                    
+                </header>
+        
+                
+                <section class="post-content grid-container grid-small">
+                    <div class="text"><%- post.content %></div>
+  
+                </section>        
+                
+            </article>
+            <div class="clear"></div>
+
+            <!-- start: .author -->
+            <section id="author" class="author section bordered  with-avatar">
+                <div class="grid-container grid-small">
+                    <!--<h3 class="title bordered">About the Author</h3>-->
+                    <div class="avatar">
+                            <a href="<%= themeConfig.domain %>" class="hover-effect thumb"><span class="full-image cover" style="background-image: url( <%= themeConfig.domain %>/images/avatar.png?v=<%= site.utils.now %>);"></span></a>
+                    </div>
+                    <div class="info">
+
+                        <h4 class="title medium author-name"><a href="<%= themeConfig.domain %>">
+                        <% if (site.customConfig.mingzi) { %>
+                        <%= site.customConfig.mingzi %>
+                        <% } %>
+                        </a></h4>
+
+                        <p><%- themeConfig.siteDescription %></p>
+
+                    </div>
+                </div>
+            </section>
+            <!-- end: .author -->
+            
+            <section class="related section bordered">
+                    <% if (post.prevPost && !post.hideInList) { %>
+                    <article class="prev grid-50 tablet-grid-50 grid-parent">
+                            <div class="thumb cover" <% if (themeConfig.showFeatureImage && post.feature) { %> style="background: url(<%= post.prevPost.feature %>);" <% } %>></div>
+
+                        <a href="<%= post.prevPost.link %>" class="full-link"></a>                      
+                        <div class="info">
+                            <h4 class="title medium white no-margin"><%= post.prevPost.title %></h4>
+                            <p class="title small related">上一篇</p>
+                        </div>
+                    </article>
+                    <% } %>
+                    <% if (post.nextPost && !post.hideInList) { %>
+                    <article class="next grid-50 tablet-grid-50 grid-parent">
+
+                            <div class="thumb cover" <% if (themeConfig.showFeatureImage && post.feature) { %> style="background: url(<%= post.nextPost.feature %>);" <% } %>></div>
+
+                        <a href="<%= post.nextPost.link %>" class="full-link"></a>                        
+                        <div class="info">
+                            <h4 class="title medium white no-margin"> <%= post.nextPost.title %></h4>
+                            <p class="title small related">下一篇</p>
+                        </div>
+                    </article>
+                    <% } %>
+
+                <div class="clear"></div>
+            </section>
+
+            <div class="clear"></div>
+
+            <!-- start: disqus integration -->
+            <div id="comments" class="section bordered">
+                <h3 class="title medium no-margin">Comments</h3>
+
+            </div>
+
+            <% if (typeof commentSetting !== 'undefined' && commentSetting.showComment) { %>
+        <% if (commentSetting.commentPlatform === 'gitalk') { %>
+          <div id="gitalk-container"></div>
+        <% } %>
+
+        <% if (commentSetting.commentPlatform === 'disqus') { %>
+          <div id="disqus_thread"></div>
+        <% } %>
+      <% } %>
+            <!-- end: disqus integration -->
+            
+            <div class="clear"></div>
+        </div>
+        <!-- end: .left-content -->    
+        
+        <!-- start: #sidebar -->
+
+<!-- end: #sidebar -->        
+        <div class="clear"></div>
+    
+    </div>
+    <!-- end: .content -->
+	
+</main>
+<!-- end: #single -->
+
+
+
+		<div class="clear"></div>
+
+<!-- start: #footer -->
+<%- include('./includes/footer') %>
+</body>
+</html>

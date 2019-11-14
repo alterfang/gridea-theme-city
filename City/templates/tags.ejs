@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html>
+<%- include('./includes/head', { siteTitle: themeConfig.siteName }) %>
+<body class="tag-template tag-arquitecture">
+
+    <!-- start: .mobile.main-nav -->
+    <%- include('./includes/header') %>
+
+        
+<main id="archives" class="main tablet-grid-100 mobile-grid-100" role="main">
+        <div class="tag-description section textcenter cover background" <% if (site.customConfig.biaoqian) { %> style="background: url('<%= site.customConfig.biaoqian %>');" <% } %>>
+            <div class="grid-container grid-small">
+                <h1 class="title ularge white">标签</h1>
+                   
+                <div class="clear"></div>
+            </div>
+        </div>
+	
+    <div class="content-wrapper">
+            
+        <!-- start: .articles -->
+                      
+<section class="tags-tag xiangshang">
+            <% site.tags.forEach(function(tag) { %>
+                <a href="<%= tag.link %>"><%= tag.name %></a>
+<% }); %>
+
+                
+            
+        </section>
+  
+
+
+
+            <div class="clear"></div>        
+    
+        <!-- end: .articles -->
+
+    </div>
+
+</main>
+
+		<div class="clear"></div>
+
+<!-- start: #footer -->
+<%- include('./includes/footer') %>
+
+</body>
+</html>

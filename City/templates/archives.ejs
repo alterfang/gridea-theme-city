@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html>
+<%- include('./includes/head', { siteTitle: themeConfig.siteName }) %>
+<body class="tag-template tag-arquitecture">
+
+    <!-- start: .mobile.main-nav -->
+    <%- include('./includes/header') %>
+
+        
+<main id="archives" class="main tablet-grid-100 mobile-grid-100" role="main">
+        <div class="tag-description section textcenter cover background" <% if (site.customConfig.guidang) { %> style="background: url('<%= site.customConfig.guidang %>');" <% } %>>
+            <div class="grid-container grid-small">
+                <h1 class="title ularge white">归档</h1>
+                   
+                <div class="clear"></div>
+            </div>
+        </div>
+	
+    <div class="content-wrapper">
+            
+        <!-- start: .articles -->
+        <div class="articles">                  
+                <% let years = []; posts.forEach((item) => { const year = item.date.substring(0, 4); if (!years.includes(year)) { years.push(year); } }); %>
+                <% years.forEach(function(year) { %>
+
+    
+              <% posts.forEach(function(post, index) { %>
+               <%if (post.date.indexOf(year) !== -1) { %>
+                <article class="default grid-50  first-post post tag-travel">
+
+<div class="featured-image">
+              <a href="<%= post.link %>" class="thumb hover-effect">
+        <span class="full-image cover" <% if (themeConfig.showFeatureImage && post.feature) { %> style="background: url(<%= post.feature %>) no-repeat;"  <% } %> ></span>
+        </a>   
+    <% post.tags.forEach(function(tag) { %>
+    <div class="tags">
+            <a href="<%= tag.link %>"><%= tag.name %></a>
+        </div>
+        <% }); %>
+</div>
+
+<div class="info">
+
+<header>
+    
+    <div class="meta">      
+        <h3 class="title ularge gradient-effect"><a href="<%= post.link %>"><%= post.title %></a></h3>
+
+        <time datetime="2018-08-06"><%= post.dateFormat %></time>
+        <div class="clear"></div>
+    </div>
+
+</header>
+
+<div class="excerpt">
+    <%- post.abstract %>
+    <div class="clear"></div>
+</div>
+
+<a href="<%= post.link %>" class="button large">阅读更多</a>
+
+</div>
+</article>
+
+<% } %>
+                                <% }); %>
+                                <% }); %>
+
+  
+
+
+
+            <div class="clear"></div>        
+        </div>
+        <!-- end: .articles -->
+        <nav class="pagination" role="navigation">
+                <div class="nav">
+                    <% if (pagination.prev) { %>
+                    <a class="prev button primary" href="<%= pagination.prev %>">上一页</a>
+                    <% } %>
+                    <% if (pagination.next) { %>
+                        <a class="next button primary" href="<%= pagination.next %>">下一页</a>
+                        <% } %>
+                        
+                </div>
+            </nav>
+    </div>
+
+</main>
+
+		<div class="clear"></div>
+
+<!-- start: #footer -->
+<%- include('./includes/footer') %>
+
+</body>
+</html>

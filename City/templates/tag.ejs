@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <%- include('./includes/head', { siteTitle: themeConfig.siteName }) %>
+<body class="home-template">
+
+    <!-- start: .mobile.main-nav -->
+
+    <%- include('./includes/header') %>
+<!-- end: #header -->
+
+
+<main id="home" class="main tablet-grid-100 mobile-grid-100" role="main">	
+    
+    <div class="content-wrapper">
+            
+        <!-- start: .articles -->
+        <div class="articles">                  
+            <% posts.forEach(function(post) { %>          
+<article class="default grid-50  first-post post tag-travel">
+
+        <div class="featured-image">
+                      <a href="<%= post.link %>" class="thumb hover-effect">
+                        
+                <span class="full-image cover" <% if (themeConfig.showFeatureImage && post.feature) { %> style="background: url(<%= post.feature %>) no-repeat;"  <% } %> ></span>
+               
+                </a>   
+           
+            <div class="tags">
+                  <% post.tags.forEach(function(tag) { %>   <a href="<%= tag.link %>"><%= tag.name %></a><% }); %>
+                </div>
+                
+        </div>
+    
+    <div class="info">
+
+        <header>
+            
+            <div class="meta">      
+                <h3 class="title ularge gradient-effect"><a href="<%= post.link %>"><%= post.title %></a></h3>
+
+                <time datetime="2018-08-06"><%= post.dateFormat %></time>
+                <div class="clear"></div>
+            </div>
+
+        </header>
+
+        <div class="excerpt">
+            <%- post.abstract %>
+            <div class="clear"></div>
+        </div>
+
+        <a href="<%= post.link %>" class="button large">阅读更多</a>
+
+    </div>
+</article>
+<% }); %>
+
+
+
+
+
+
+
+
+            <div class="clear"></div>        
+        </div>
+        <!-- end: .articles -->
+        
+        <nav class="pagination" role="navigation">
+    <div class="nav">
+        <% if (pagination.prev) { %>
+        <a class="prev button primary" href="<%= pagination.prev %>">上一页</a>
+        <% } %>
+        <% if (pagination.next) { %>
+            <a class="next button primary" href="<%= pagination.next %>">下一页</a>
+            <% } %>
+            
+	</div>
+</nav>
+    
+    </div>
+
+</main>
+
+		<div class="clear"></div>
+
+<!-- start: #footer -->
+<%- include('./includes/footer') %>
+
+</body>
+</html>
